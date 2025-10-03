@@ -1,0 +1,10 @@
+project_id = "acjyfgbaeuoviiagncwq"
+
+# =================================================================
+# EDGE FUNCTIONS CONFIGURATION
+# =================================================================
+
+# Função de submissão de contatos
+# Esta função é pública (não requer autenticação)
+[functions.submit-contact]
+verify_jwt = false
