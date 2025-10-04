@@ -45,10 +45,6 @@ export default defineConfig(({ mode }) => ({
             return 'vendor-router';
           }
           
-          // Supabase and auth
-          if (id.includes('@supabase') || id.includes('hooks/useAuth')) {
-            return 'vendor-auth';
-          }
           
           // Component chunks for lazy loading
           if (id.includes('components/') && !id.includes('components/ui/') && !id.includes('Header') && !id.includes('Hero')) {
