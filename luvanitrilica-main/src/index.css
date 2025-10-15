@@ -142,6 +142,14 @@ All colors MUST be HSL.
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
+    /* iOS Safari fixes */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+    /* Prevent zoom on input focus */
+    -webkit-text-size-adjust: 100%;
+    /* Fix for iOS viewport issues */
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
 
   body::before {
@@ -897,6 +905,44 @@ All colors MUST be HSL.
   .animate-pulse-gentle,
   .animate-fade-in-up {
     animation: none !important;
+  }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari specific styles */
+  .header-ios-fix {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    /* Fix for iOS backdrop-blur issues */
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    /* Ensure proper rendering on iOS */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    /* Fix for iOS Safari header jumping */
+    will-change: transform;
+  }
+  
+  /* iOS menu fixes */
+  .menu-ios-fix {
+    /* Prevent iOS Safari from zooming on menu interaction */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Fix for iOS touch events */
+    touch-action: manipulation;
+  }
+  
+  /* iOS viewport fixes */
+  .viewport-ios-fix {
+    /* Support for iOS safe areas */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 }
 

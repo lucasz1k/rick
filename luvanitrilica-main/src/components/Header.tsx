@@ -9,7 +9,7 @@ const Header = () => {
     const url = `https://wa.me/5511949326324?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
-  return <header className="w-full bg-background/95 backdrop-blur-sm sticky top-0 z-50 border-b border-border/50 shadow-brand">
+  return <header className="w-full bg-background/95 backdrop-blur-sm sticky top-0 z-50 border-b border-border/50 shadow-brand header-ios-fix">
       <div className="section-container">
         <div className="flex items-center justify-between h-20">
           

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/9hE51zoNyDVS3kjCCpp50CVgjZ02/uploads/1757939197838-ChatGPT Image 15 de set. de 2025, 09_26_27.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Luvas descartáveis certificadas ANVISA para restaurantes, clínicas e indústrias. Entrega em 24h São Paulo. Nitrílicas, plásticas e cirúrgicas.">
@@ -109,6 +109,12 @@
         line-height: 1.5;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        /* iOS Safari fixes */
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: none;
+        -webkit-text-size-adjust: 100%;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
       }
       
       #root {

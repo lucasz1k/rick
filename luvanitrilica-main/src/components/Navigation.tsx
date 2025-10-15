@@ -98,21 +98,21 @@ const Navigation = () => {
       </nav>
 
       {/* Mobile Navigation */}
-      <div className="lg:hidden">
+      <div className="lg:hidden menu-ios-fix">
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="sm" className="p-2">
+            <Button variant="ghost" size="sm" className="p-2 menu-ios-fix">
               <Menu className="h-5 w-5" />
               <span className="sr-only">Abrir menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px]">
+          <SheetContent side="right" className="w-[300px] viewport-ios-fix">
             <div className="flex flex-col space-y-4 mt-8">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.href)}
-                  className={`text-left text-lg font-medium transition-colors hover:text-primary p-2 rounded-md ${
+                  className={`text-left text-lg font-medium transition-colors hover:text-primary p-2 rounded-md menu-ios-fix ${
                     activeSection === item.id.replace('#', '') 
                       ? 'text-primary bg-primary/10' 
                       : 'text-foreground hover:bg-muted'
