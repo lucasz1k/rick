@@ -16,12 +16,11 @@ const Header = () => {
           {/* Logo Section - Balanced spacing */}
           <div className="flex items-center gap-4 min-w-0 flex-shrink-0">
             <div className="flex items-center gap-3">
-              <SuperImage 
+              <SuperImage
                 src={logo} 
                 alt="GloveTec - Luvas Descartáveis Profissionais Certificadas"
-                className="h-11 w-auto flex-shrink-0"
+                className="h-11 flex-shrink-0 w-auto max-w-12"
                 priority={true}
-                sizes="200px"
                 quality="high"
               />
               <div className="min-w-0">
