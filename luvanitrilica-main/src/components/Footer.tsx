@@ -1,10 +1,8 @@
 import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
+import { useHandleWhatsApp } from '@/hooks/useHandleWhatsApp';
+
 const Footer = () => {
-  const handleWhatsApp = () => {
-    const message = "Ola! Preciso de um orcamento para luvas descartaveis. Vi no site que entregam em 24h para Sao Paulo. Pode me ajudar?";
-    const url = `https://wa.me/5511949326324?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
+  const handleWhatsApp = useHandleWhatsApp("Olá, tudo bem? Gostaria de luvas 😁");
   return <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

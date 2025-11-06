@@ -1,14 +1,10 @@
 import { MessageCircle } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useHandleWhatsApp } from '@/hooks/useHandleWhatsApp';
 
 const WhatsAppFloat = () => {
   const [isVisible, setIsVisible] = useState(false);
-
-  const handleWhatsApp = () => {
-    const message = "Ola! Preciso de um orcamento para luvas descartaveis. Vi no site que entregam em 24h para Sao Paulo. Pode me ajudar?";
-    const url = `https://wa.me/5511949326324?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
+  const handleWhatsApp = useHandleWhatsApp();
 
   useEffect(() => {
     const toggleVisibility = () => {

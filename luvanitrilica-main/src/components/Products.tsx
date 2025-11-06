@@ -6,19 +6,12 @@ import { Headphones, Droplets, Award, CheckCircle } from "lucide-react";
 import nitrileCleanImage from "@/assets/product-nitrile-premium.jpg";
 import plasticNewImage from "@/assets/product-plastic-professional.jpg";
 import surgicalCleanImage from "@/assets/product-surgical-sterile.jpg";
+import { useHandleWhatsApp } from '@/hooks/useHandleWhatsApp';
 
 const Products = React.memo(() => {
-  const handleWhatsApp = () => {
-    const message = "Ola! Preciso de um orcamento para luvas descartaveis. Vi no site que entregam em 24h para Sao Paulo. Pode me ajudar?";
-    const url = `https://wa.me/5511949326324?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
+  const handleWhatsApp = useHandleWhatsApp();
 
-  const handlePricesAvailability = () => {
-    const message = "Ola! Gostaria de receber a tabela de precos atualizada e informacoes sobre disponibilidade dos produtos. Preciso de um orcamento personalizado.";
-    const url = `https://wa.me/5511949326324?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
+  const handlePricesAvailability = useHandleWhatsApp("Ola! Gostaria de receber a tabela de precos atualizada e informacoes sobre disponibilidade dos produtos. Preciso de um orcamento personalizado.");
 
   const products = [
     {

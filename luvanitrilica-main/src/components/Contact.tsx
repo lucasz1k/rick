@@ -5,6 +5,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { MessageCircle, Phone, Clock, MapPin, Mail } from "lucide-react";
 import { useState, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useHandleWhatsApp } from '@/hooks/useHandleWhatsApp';
+
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -61,11 +63,7 @@ const Contact = () => {
     return true;
   };
 
-  const handleWhatsApp = () => {
-    const message = "Ola! Preciso de um orcamento para luvas descartaveis. Vi no site que entregam em 24h para Sao Paulo. Pode me ajudar?";
-    const url = `https://wa.me/5511949326324?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
+  const handleWhatsApp = useHandleWhatsApp();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

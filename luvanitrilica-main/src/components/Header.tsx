@@ -3,12 +3,10 @@ import { Phone, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo-glovetec.png";
 import Navigation from "@/components/Navigation";
 import { SuperImage } from "@/components/ui/super-image";
+import { useHandleWhatsApp } from '@/hooks/useHandleWhatsApp';
+
 const Header = () => {
-  const handleWhatsApp = () => {
-    const message = "Ola! Preciso de um orcamento para luvas descartaveis. Vi no site que entregam em 24h para Sao Paulo. Pode me ajudar?";
-    const url = `https://wa.me/5511949326324?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
+  const handleWhatsApp = useHandleWhatsApp();
   return <header className="w-full bg-background/95 backdrop-blur-sm sticky top-0 z-50 border-b border-border/50 shadow-brand header-ios-fix">
       <div className="section-container">
         <div className="flex items-center justify-between h-20">

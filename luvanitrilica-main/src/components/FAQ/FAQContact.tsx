@@ -1,12 +1,9 @@
 import { MessageCircle, Phone, Mail } from "lucide-react";
 import { whatsappContactMessage, whatsappNumber } from "./FAQData";
+import { useHandleWhatsApp } from '@/hooks/useHandleWhatsApp';
 
 const FAQContact = () => {
-  const handleWhatsAppClick = () => {
-    const message = "Ola! Preciso de um orcamento para luvas descartaveis. Vi no site que entregam em 24h para Sao Paulo. Pode me ajudar?";
-    const url = `https://wa.me/5511949326324?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
+  const handleWhatsAppClick = useHandleWhatsApp();
 
   return (
     <div className="scroll-animate text-center p-6 md:p-8 bg-gradient-to-br from-card via-muted/20 to-card rounded-2xl lg:rounded-3xl border border-border shadow-brand animate-fade-in hover-scale">

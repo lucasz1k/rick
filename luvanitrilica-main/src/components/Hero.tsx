@@ -4,12 +4,10 @@ import { Button } from "@/components/ui/button";
 import { StatsCard } from "@/components/ui/stats-card";
 import { SuperImage } from "@/components/ui/super-image";
 import heroGloves3D from "@/assets/hero-gloves-3d.jpg";
+import { useHandleWhatsApp } from '@/hooks/useHandleWhatsApp';
+
 const Hero = React.memo(() => {
-  const handleWhatsApp = () => {
-    const message = "Ola! Preciso de um orcamento para luvas descartaveis. Vi no site que entregam em 24h para Sao Paulo. Pode me ajudar?";
-    const url = `https://wa.me/5511949326324?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
+  const handleWhatsApp = useHandleWhatsApp();
   const handleScrollToProducts = () => {
     const productsSection = document.getElementById('products');
     if (productsSection) {

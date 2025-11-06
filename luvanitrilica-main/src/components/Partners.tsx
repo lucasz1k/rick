@@ -1,13 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Award, Truck, Users, CheckCircle, Star, Building } from "lucide-react";
+import { useHandleWhatsApp } from '@/hooks/useHandleWhatsApp';
 
 const Partners = () => {
-  const handlePartnershipClick = () => {
-    const message = "Olá! Gostaria de me tornar parceiro da GloveTec. Podem me enviar informações sobre as condições de parceria?";
-    const url = `https://wa.me/5511949326324?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
+  const handlePartnershipClick = useHandleWhatsApp("Olá! Gostaria de me tornar parceiro da GloveTec. Podem me enviar informações sobre as condições de parceria?");
 
   const partnersData = [
     { 

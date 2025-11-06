@@ -3,13 +3,10 @@ import { Sparkles, Zap, Target, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SuperImage } from "@/components/ui/super-image";
 import nitrileGlovesBanner from '@/assets/nitrile-gloves.jpg';
+import { useHandleWhatsApp } from '@/hooks/useHandleWhatsApp';
 
 const CinematicBanner = () => {
-  const handleWhatsApp = () => {
-    const message = "Ola! Preciso de um orcamento para luvas descartaveis. Vi no site que entregam em 24h para Sao Paulo. Pode me ajudar?";
-    const url = `https://wa.me/5511949326324?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
+  const handleWhatsApp = useHandleWhatsApp("Olá, tudo bem? Gostaria de luvas 😁");
 
   return (
     <section className="relative w-full section-padding-sm overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100 scroll-animate">
